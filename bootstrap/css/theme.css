@@ -1,0 +1,363 @@
+body{
+}
+
+.container{
+  overflow: hidden;
+  max-width: 998px;
+  width: 998px;
+  padding: 0 !important;
+  -webkit-box-shadow: 0px 2px 5px 3px rgba(207,205,207,1);
+  -moz-box-shadow: 0px 2px 5px 3px rgba(207,205,207,1);
+  box-shadow: 0px 2px 5px 3px rgba(207,205,207,1);
+}
+
+#header{
+  width: 998px;
+  height: 118px;
+  background-image: url("../../img/header.png");
+  background-repeat: no-repeat;;
+  overflow: hidden;
+}
+
+#menu{
+  padding-top: 6px;
+  min-width: 998px;
+  height: 35px;
+  background-image: url("../../img/menu.png");
+  background-repeat: repeat-x;
+}
+
+#login-content{
+  min-width: 998px;
+  min-height: 1000px;
+  background: none repeat scroll 0 0 #ececec;
+}
+
+#login-div{
+  width: 230px;
+  margin: 10px 10px 10px 10px;
+  border: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+  line-height: 28px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#login_succes{
+  margin-bottom: 15px;
+}
+
+#about_us{
+  min-width: 230px;
+  height: 800px;
+  margin: 10px 10px 10px 10px;
+  border: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#enter{
+  width: 229px;
+  margin: 0;
+  border: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+  height: 28px;
+  background: url(../../img/login_h1.png) repeat-x;
+  line-height: 28px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#madeby{
+  width: 229px;
+  margin: 0;
+  border: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+  height: 28px;
+  background: url(../../img/login_h1.png) repeat-x;
+  line-height: 28px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#news{
+  margin-top: 10px;
+  border: 1px solid #c4c4c4;
+  border-bottom: 1px solid #c4c4c4;
+  height: 28px;
+  background: url(../../img/login_h1.png) repeat-x;
+  line-height: 28px;
+  font-size: 12px;
+  font-weight: 700;
+}
+#login_icon{
+  background: url(../../img/login_icon.png) repeat-x;
+  width: 30px;
+  height: 28px;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+#icon1{
+  background: url(../../img/icon1.png) no-repeat;
+  width: 16px;
+  height: 14px;
+  margin: 8px 8px 10px 5px;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+
+#icon1_2{
+  background: url(../../img/icon1.png) no-repeat;
+  width: 16px;
+  height: 14px;
+  margin: 18px 8px 0px 5px;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+#icon1_3{
+  background: url(../../img/icon1.png) no-repeat;
+  width: 16px;
+  height: 14px;
+  margin: 18px 8px 0px 35px;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+.simple_page_icon{
+  background: url(../../img/icon1.png) no-repeat;
+  width: 16px;
+  height: 14px;
+  margin: 12px 8px 0px 82px;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+.simple_page_icon_plus{
+  background: url(../../img/icon2.png) no-repeat;
+  width: 16px;
+  height: 14px;
+  margin: 0 8px 0px 82px;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+.simple_page_icon_table{
+  background: url(../../img/icon_table.png) no-repeat;
+  width: 16px;
+  height: 14px;
+  margin: 0 8px 0px 82px;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+.simple_course_icon_plus{
+  background: url(../../img/icon2.png) no-repeat;
+  width: 16px;
+  height: 14px;
+  margin: 0 8px 0px 0px;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+.simple_course_icon_x{
+  background: url(../../img/icon_x.png) no-repeat;
+  width: 16px;
+  height: 14px;
+  margin: 0 8px 0px 0px;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+.simple_page{
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+#succes{
+  background: url(../../img/succes.png) no-repeat;
+  width: 16px;
+  height: 14px;
+  margin: 10px 8px 0px 400px;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+#welcome_text{
+  width: 94%;
+  font-size: 14px;
+  margin: auto;
+  text-align: center;
+}
+
+#username, #pw{
+  background-color: rgb(250, 255, 189);
+  background-image: none;
+  color: rgb(0, 0, 0);
+  font-size: 11px;
+  font-family: Tahoma;
+  width: 200px;
+  height: 20px;
+}
+
+#login_img{
+  margin: 50px 0 0 300px;
+}
+form{
+  margin: 0 15px 0 15px;
+}
+
+.d_button{
+  cursor: pointer !important;
+  text-align: center;
+  widtH: 70px;
+  display: inherit;
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid #cecece;
+  color: #646464;
+  font-size: 11px;
+  font-family: Tahoma;
+  font-weight: bold;
+  padding: 0 5px;
+  background: url(../../img/login_gomb.png) repeat-x;
+  text-decoration: none;
+  margin: 0px 0 10px 130px;
+}
+
+.register{
+  float:left;
+  display: inline;
+}
+
+#login-form{
+  margin-top: 8px;
+}
+
+#names h3{
+  font-size: 12px;
+  margin-left: 12px;
+}
+.news p{
+  margin: 15px 50px 0 20px;
+}
+
+.news{
+  text-transform: none;
+  text-align: justify;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.logged_in p{
+  margin: 15px 50px 0 20px;
+}
+
+.logged_in{
+  text-transform: none;
+  text-align: justify;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+#right-div{
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.menu-item, .menu-item a{
+  padding-left: 15px;
+  color: white;
+}
+
+.menu-item a:hover{
+  color: rgb(250, 255, 189);
+  text-decoration: none;
+}
+.centered-form{
+	margin-top: 60px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px;
+}
+
+#registration_btn{
+  background-color: #666666;
+}
+
+.registration_btn{
+  background-color: #666666 !important;
+}
+#backtoindex{
+  width: 100%;
+  text-align: center;
+}
+.datatable{
+  padding: 10px;
+  border: 1px, solid, #ffffff;
+  width: 50%;
+  font-size: 12px;
+  box-shadow: 0px 1px 5px 3px rgba(158,150,158,1);
+}
+
+.datatable tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.datatable tr{
+  cursor: pointer;
+}
+#logout{
+  margin-left: 42%;
+}
+#available_courses{
+  margin-left: 82px;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+#available_courses_single{
+  margin-left: 10px;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+#test {
+width: 600px;
+padding: 30px;
+display: none;
+background: #FFF;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+-webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7);
+-moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);
+}
+#fixed-form{
+  margin-top: 15px !important;
+}

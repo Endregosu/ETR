@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div class="container">
+        <div id="login-content">
+          <div class="row">
+              <div id="right-div" class="col-md-12">
+                    <div class="logged_in col-lg-12">
+                      <span class="simple_page_icon"></span>
+                      <h4 class="simple_page">Saját profil</h4>
+                    </div>
+                    <div class="col-lg-10 col-md-offset-1">
+                      <div id="fixed-form" class="row centered-form">
+                      <div class="col-xs-10 col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-1">
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+                            <form role="form">
+                              <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                  <div class="form-group">
+                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="Vezeték név" disabled>
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                  <div class="form-group">
+                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Keresztnév" disabled>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <input type="email" name="email" id="email" class="form-control input-sm" placeholder="E-mail cím" disabled>
+                              </div>
+
+                              <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                  <div class="form-group">
+                                    <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Jelszó" disabled>
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                  <div class="form-group">
+                                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Jelszó újra" disabled>
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                  <div class="form-group">
+                                    <input type="text" name="zip" id="zip" class="form-control input-sm" placeholder="Irányítószám" disabled>
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                  <div class="form-group">
+                                    <input type="text" name="city" id="city" class="form-control input-sm" placeholder="Város" disabled>
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                  <div class="form-group">
+                                    <input type="text" name="address" id="address" class="form-control input-sm" placeholder="Cím (utca/házszám)" disabled>
+                                  </div>
+                                </div>
+                              </div>
+                                    <div class="radio">
+                                      <label><input type="radio" id="oktato" name="optradio1" disabled>Oktató</label>
+                                    </div>
+                                    <div class="radio">
+                                      <label><input type="radio" id="admin" name="optradio2" disabled>Admin</label>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                      <div class="form-group">
+                                        <input type="" id="modify" value="Módosítás" class=" registration_btn btn btn-info btn-block">
+                                      </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6">
+                                      <div class="form-group">
+                                        <input type="" id="save" value="Mentés" class=" registration_btn btn btn-info btn-block" disabled>
+                                      </div>
+                                    </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+  <script>
+  $(function(){
+    var locked = true;
+      $("#modify").click(function(){
+        event.preventDefault()
+          if(locked){
+              $("#fixed-form :input").attr("disabled", false);
+              locked = false;
+          } else {
+              $("#fixed-form :input").attr("disabled", true);
+              $("#modify").attr("disabled", false);
+              locked = true;
+          }
+      });
+  });
+    $(document).ready(function(){
+      $.ajax({
+           url: 'profile_update.php?action=get', //This is the current doc
+           type: "POST",
+           dataType:'json', // add json datatype to get json
+           complete: function(data) {
+                   var json = data.responseText;
+                   var array = JSON.parse(json);
+                   console.log(json);
+                   $('#first_name').val(array['keresztnev']);
+                   $('#last_name').val(array['vezeteknev']);
+                   $('#email').val(array['email']);
+                   $('#zip').val(array['zip']);
+                   $('#city').val(array['varos']);
+                   $('#address').val(array['cim']);
+                   if(array['oktato'] == 0) $('#oktato').prop('checked', true); else $('#oktato').prop('checked', false);
+                   if(array['admin'] == 0) $('#admin').prop('checked', true); else $('#admin').prop('checked', false);
+           }
+      });
+
+      $('#save').click(function(){
+            var first_name =  $('#first_name').val();
+            var last_name =  $('#last_name').val();
+            var email =  $('#email').val();
+            var password = $('#password').val();
+            var zip =  $('#zip').val();
+            var city =  $('#city').val();
+            var address =  $('#address').val();
+            var oktato =  $('#oktato').val();
+            var admin =  $('#admin').val();
+
+            $.ajax({
+                 url: 'profile_update.php?action=update', //This is the current doc
+                 type: "POST",
+                 dataType:'json', // add json dataty  pe to get json
+                 data: ({
+                   first_name : first_name,
+                   last_name : last_name,
+                   email : email,
+                   password : password,
+                   zip : zip,
+                   city : city,
+                   address : address,
+                   oktato : oktato,
+                   admin : admin
+                 }),
+                 complete: function(data) {
+                         console.log(data.responseText);
+                         location.reload();
+                 }
+            });
+        });
+
+    });
+  </script>
+</html>

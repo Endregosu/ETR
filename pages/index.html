@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div class="container">
+        <div id="login-content">
+          <div class="row">
+              <div id="left-div" class="col-md-3">
+                <div id="login-div">
+                    <span id="login_icon"></span>
+                    <h1 id="enter">Belépés</h1>
+                    <form id="form" action="handler/logged_in.php" method="POST">
+                      <input id="username" name="username" type="text">
+                      <input id="pw" name="password" type="password">
+                      <div id="login-form">
+                        <a id="register"class="register" href="#" onclick="">Regisztráció</a>
+                        <a id="submit" class="d_button" onclick="">Belépés</a>
+                      </div>
+                    </form>
+                </div>
+                <div id="about_us">
+                  <span id="icon1"></span>
+                  <h1 id="madeby">Készítették</h1>
+                  <div id="names">
+                    <h3> Hunyadi Zsombor </h3>
+                    <h3> Szabó Endre </h3>
+                    <h3> Felhasznált technológiák:</h3>
+                    <ul>
+                        <li>Bootstrap</li>
+                        <li>PHP</li>
+                        <li>Oracle</li>
+                    </ul>
+                    <h3>Adatbázis alapú rendszerek - 2017</h3>
+                    <h3>ETR rendszer</h3>
+                  </div>
+                </div>
+              </div>
+              <div id="right-div" class="col-md-9">
+                  <span id="icon1_2"></span>
+                  <h1 id="news">Hírek</h1>
+                    <div class="news col-lg-12">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non imperdiet nisl. Fusce quis leo sit amet felis dignissim iaculis. Mauris laoreet ac odio sed dictum. Cras bibendum imperdiet neque, vel lacinia arcu feugiat ut. Nunc varius placerat sem vel elementum. Nulla in euismod elit, sit amet volutpat urna. Sed in enim purus. Duis sed dolor velit. Phasellus pretium ligula metus. Cras maximus rutrum scelerisque. Praesent in blandit purus. In congue dolor eget risus consequat, ut convallis purus ultrices. Sed a commodo sem. Sed sodales nibh quis libero suscipit tincidunt. Fusce aliquam justo ullamcorper dolor consectetur ullamcorper. Nulla ut magna faucibus, egestas purus ut, lobortis elit.
+                      </br></br>
+                        Donec sodales vestibulum congue. Vestibulum sit amet suscipit felis. Fusce enim turpis, lobortis id tincidunt vel, luctus eu felis. Curabitur in augue sed ipsum pellentesque sagittis at ut nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus vel est eu dolor elementum rhoncus. Quisque vel pretium magna, ut sagittis orci. Integer sed imperdiet turpis, vitae accumsan nunc. Maecenas finibus mauris ac vulputate placerat. Phasellus dictum, turpis non volutpat efficitur, lacus lectus mollis diam, pulvinar consequat enim felis vel turpis.
+                      </br></br>
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur convallis, purus vel placerat porta, sem lectus tincidunt tellus, volutpat commodo turpis tellus nec nibh. Nullam auctor auctor lobortis. In tincidunt tortor tellus, sollicitudin vulputate erat tincidunt vitae. Pellentesque egestas eu dui at posuere. Praesent libero ligula, volutpat non nunc ac, egestas fermentum sapien. Quisque tristique condimentum ligula, eu vestibulum massa. Ut interdum iaculis laoreet. Vestibulum a lectus vehicula, feugiat ipsum et, sagittis massa. Phasellus in ligula libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean gravida commodo aliquet. Vivamus tincidunt auctor dolor, ac congue massa vulputate eget. Cras quis augue turpis. Vestibulum sed fermentum risus. Nam ipsum erat, semper ultrices porttitor eu, pellentesque quis massa.
+                      </br></br>
+                        Quisque velit odio, porttitor et dui nec, venenatis vehicula felis. Pellentesque ullamcorper sed tortor vitae varius. Nam nec egestas enim. Mauris malesuada velit in nisl fringilla maximus. Praesent posuere, arcu vestibulum varius congue, libero turpis egestas magna, aliquam elementum est erat eu lorem. Proin accumsan enim vel nulla egestas pretium. Sed interdum nisi in suscipit posuere. Donec feugiat ultrices metus, vel porttitor mi tristique at.
+                      </p>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
+<script>
+  $(document).ready(function(){
+    $(document).keypress(function(e) {
+        if(e.which == 13) {
+            $('#submit').click();
+        }
+    });
+
+    $('#submit').click(function(){
+          var username =  $('#username').val();
+          var password = $('#pw').val();
+          $.ajax({
+               url: 'handler/login.php', //This is the current doc
+               type: "POST",
+               dataType:'json', // add json datatype to get json
+               data: ({username: username, password: password}),
+               complete: function(data) {
+                       console.log(data);
+                      if(data.responseText == "OK"){
+                        form.submit();
+                      } else {
+                        alert("Helytelen felhasználónév / jelszó! Próbáld újra.");
+                      }
+               }
+          });
+      });
+
+      $('#register').click(function(){
+        window.location.href = "handler/registration.php";
+      });
+  });
+</script>

@@ -1,0 +1,37 @@
+<!-- PHTML File to handle menu system -->
+<?php
+require_once 'config.html'; //Header options
+if (isset($_SESSION)){ ?>
+
+<!-- Case 1, user logged in  -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+      <body>
+        <div class="container">
+          <div id="header">
+          </div>
+          <div id="menu">
+                <span class="menu-item"><a href="logged_in.php">Főoldal</a></span>
+                <span class="menu-item"><a href="courses.php">Kurzusaim</a></span>
+                <span class="menu-item"><a href="#">Vizsgák</a></span>
+                <span class="menu-item"><a href="#">Pénzügyek</a></span>
+                <span class="menu-item"><a href="profile.php">Profil</a></span>
+                <span id="logout" class="menu-item"><a href="logout.php">Kijelentkezés</a></span>
+        </div>
+      </body>
+    </div>
+<?php } else { ?>
+
+<!-- Case 2, user notlogged in  -->
+
+  <html lang="en">
+    <body>
+      <div class="container">
+        <div id="header">
+        </div>
+        <div id="menu">
+      </div>
+    </body>
+  </div>
+<?php }
